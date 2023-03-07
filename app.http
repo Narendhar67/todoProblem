@@ -17,17 +17,22 @@ Content-Type: application/json
   "id": 7,
   "todo": "Hello",
   "priority": "LOW",
-  "status": "TO DO",
+  "status": "TO ",
   "category": "HOME",
   "dueDate": "2021-02-22"
 }
 ###
 
-PUT http://localhost:3000/todos/6/
+PUT http://localhost:3000/todos/7/
 Content-Type: application/json
 
 
 {
-  "status": "IN PROGRESS"
+  "status": "IN PROGRESS",
+  "priority": "LOW"
 }
+###
+
+
+DELETE http://localhost:3000/todos/2/
 ###

@@ -96,7 +96,7 @@ const ValidateP = (request, response, next) => {
   let { priority, status, category } = request.body;
   let isAllValidated = true;
 
-  if (status !== undefined) {
+  if (status !== undefined && isAllValidated) {
     if (status === "TO DO" || status === "IN PROGRESS" || status === "DONE") {
       isAllValidated = true;
     } else {
@@ -106,7 +106,7 @@ const ValidateP = (request, response, next) => {
       response.send("Invalid Todo Status");
     }
   }
-  if (priority !== undefined) {
+  if (priority !== undefined && isAllValidated) {
     if (priority === "LOW" || priority === "HIGH" || priority === "MEDIUM") {
       isAllValidated = true;
     } else {
@@ -115,7 +115,7 @@ const ValidateP = (request, response, next) => {
       response.send("Invalid Todo Priority");
     }
   }
-  if (category !== undefined) {
+  if (category !== undefined && isAllValidated) {
     if (category === "WORK" || category === "HOME" || category === "LEARNING") {
       isAllValidated = true;
     } else {
